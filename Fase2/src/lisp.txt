@@ -1,0 +1,2 @@
+(a ( a b c) d e fgh)
+(p (p o p) p e p (a (c d)))
