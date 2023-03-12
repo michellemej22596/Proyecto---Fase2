@@ -1,58 +1,58 @@
 public class Numeros {
 	
 	/***
-	 * @param float a and b
+	 * @param double a and b
 	 * @return the boolean result of the comparison
 	 */
-	public boolean moreThan(float a, float b) {
+	public boolean moreThan(double a, double b) {
 		return a>b;
 	}
 	
 	/***
-	 * @param float a and b
+	 * @param double a and b
 	 * @return the boolean result of the comparison
 	 */
-	public boolean lessThan(float a, float b) {
+	public boolean lessThan(double a, double b) {
 		return a<b;
 	}
 	
 	/***
-	 * @param float a and b
+	 * @param double a and b
 	 * @return True if both numbers are equals, otherwise False
 	 */
-	public boolean equals(float a, float b) {
+	public boolean equals(double a, double b) {
 		return a==b;
 	}
 	
 	/***
-	 * @param float a and b
+	 * @param double a and b
 	 * @return the result of the addition
 	 */
-	public float add(float a, float b) {
+	public double add(double a, double b) {
 		return a+b;
 	}
 	
 	/***
-	 * @param float a and b
+	 * @param double a and b
 	 * @return the result of the subtraction
 	 */
-	public float subtraction(float a, float b) {
+	public double subtraction(double a, double b) {
 		return a-b;
 	}
 	
 	/***
-	 * @param float a and b
+	 * @param double a and b
 	 * @return the result of the multiplication
 	 */
-	public float multiplication(float a, float b) {
+	public double multiplication(double a, double b) {
 		return a*b;
 	}
 	
 	/***
-	 * @param float a and b
+	 * @param double a and b
 	 * @return the result of the division and 0 when a number is divided into 0.
 	 */
-	public float division(float a, float b) {
+	public double division(double a, double b) {
 		try {
 			return b/a;
 		}
