@@ -26,7 +26,7 @@ public class Interpretador {
 		
 		try {
 			
-		    archivo = new File ("C:\\lisp.txt");
+		    archivo = new File ("D:\\Escritorio\\Proyecto---Fase2\\Fase2\\src\\lisp.txt");
 		    fr = new FileReader (archivo);
 		    br = new BufferedReader(fr);
 		    
