@@ -92,7 +92,7 @@ public class Interpretador {
 				String a =Format(list_Lista[1]);
 				System.out.println(list_Lista[1]);
 				if(a.equals("Num")){
-					interpretador_numericas(list_Lista);	
+					//interpretador_numericas(list_Lista);	
 				}
 					
 				
@@ -106,54 +106,43 @@ public class Interpretador {
 
 		}
 
-		public double interpretador_numericas(String [] lista){
+		public double interpretador_numericas(String  lista, int start, int stop){
 			int contador = 0;
-			LinkedList<String> myStack =  new LinkedList<>();
+			Stack<Double> myStack =  new Stack<>();
 
-			for(String a: lista){
-				if(a.equals("(")){
-					contador = contador + 1;
-				}
-				else if(a.equals(")")){
-					contador = contador-1;
-				}
+			for(int i = start;i < stop;i++){
+				if (lista.substring(i).equals("(")){
+					
 
-				else {
+					contador = contador+1;
+					
 
-					myStack.addFirst(a);
-
-				}
-			}
-			System.out.println(contador);
-
-			if (contador!=0){
-				System.out.println("esta mala la expresion");
-			}
-			else {
-
-				Stack<Double> myStack2 = new Stack();
-				while(myStack.size()!=1){
-					if (isNumeric(myStack.getFirst())){
-						double d = Double.parseDouble(myStack.getFirst()); 
-						myStack.removeFirst();
-						myStack2.push(d);
+					if (contador>1){
+						//Double valor=interpretador_numericas(lista, i, stop-1);
+						
 
 					}
 
-					else {
-						Numeros calculator = new Numeros();
-						Double a = myStack2.pop(); 
-						Double b = myStack2.pop(); 
+					else if (contador==1){
 
-						if (myStack.getFirst().equals("+")){
-							myStack2.push(calculator.add(a,b));
+						int a=lista.lastIndexOf(")", stop);
+						stop = a;
 
-						}
 
-						else if (myStack.getFirst().equals("-")){
-							myStack2.push(calculator.subtraction(a,b));
-						}
 					}
+
+
+				}
+
+				else if ( lista.substring(i).equals("+") || lista.substring(i).equals("-")){
+					String operator = lista.substring(i) ;
+						
+				}
+
+				else if (isNumeric(lista.substring(i))){
+					
+					myStack.push(Double.parseDouble(lista.substring(i)));
+
 				}
 			}
 
