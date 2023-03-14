@@ -1,18 +1,44 @@
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.Stack;
 
 public class Interpretador {
 	
-	public void evaluator() {
-		
-	}
+	Stack<Float> stackPrincipal = new Stack<>();
 
-	public void nextToken() {
+
+	public void evaluator(String [] parts) {
+		int i=0;
+		while(i!=parts.length) {
+			
+			switch(parts[i]) {
+			
+			case "+":
+				float num1= Float.parseFloat(parts[i+1]);
+				float result=0;
+				stackPrincipal.push( result);
+				
+				
+				break;
+			
+			case "(":
+				Stack < String > stack = new Stack < String > ();
+				//partsChanged[]= parts;
+				//evaluator(partsChanged[]);
+				break;
+				
+			}
+			
+			i++;
+			
+		}
+		
 		
 	}
 	
-	public void tokenator() {
+	public void operar() {
+		
 		
 	}
 	
@@ -26,7 +52,11 @@ public class Interpretador {
 		
 		try {
 			
+<<<<<<< Updated upstream
 		    archivo = new File ("C:\\lisp.txt");
+=======
+		    archivo = new File ("Proyecto---Fase2\\Fase2\\src\\lisp.txt");
+>>>>>>> Stashed changes
 		    fr = new FileReader (archivo);
 		    br = new BufferedReader(fr);
 		    
@@ -40,7 +70,7 @@ public class Interpretador {
 		       System.out.println(linea);
 		    	msg=linea;
 		    	String[] parts = msg.split(" ");
-		    	
+		    	evaluator(parts);
 		    }
 		    
 		  
@@ -49,7 +79,7 @@ public class Interpretador {
 		catch(Exception e){
 			e.printStackTrace();
 		    System.out.println("No se ha encontrado el archivo de texto");
-		    System.out.println("Asegúrese de llamarlo lisp.txt en su disco C");
+		    System.out.println("Asegúrese de llamarlo lisp.txt dentro del proyecto");
 		 }
 		
 		finally{
