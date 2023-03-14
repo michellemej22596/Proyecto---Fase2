@@ -89,11 +89,13 @@ public class Interpretador {
 		public void interpretador_lineas(String[] lista){
 			for(String list: lista){
 				String[] list_Lista = list.split(" ");
-				switch(Format(list_Lista [3])){
-
-					case "num":
-					interpretador_numericas(list_Lista);
+				String a =Format(list_Lista[1]);
+				System.out.println(list_Lista[1]);
+				if(a.equals("Num")){
+					interpretador_numericas(list_Lista);	
 				}
+					
+				
 
 			}
 			
@@ -122,13 +124,36 @@ public class Interpretador {
 
 				}
 			}
+			System.out.println(contador);
 
 			if (contador!=0){
 				System.out.println("esta mala la expresion");
 			}
 			else {
-				while(myStack.getFirst()!=null){
-					System.out.println(myStack.getFirst());
+
+				Stack<Double> myStack2 = new Stack();
+				while(myStack.size()!=1){
+					if (isNumeric(myStack.getFirst())){
+						double d = Double.parseDouble(myStack.getFirst()); 
+						myStack.removeFirst();
+						myStack2.push(d);
+
+					}
+
+					else {
+						Numeros calculator = new Numeros();
+						Double a = myStack2.pop(); 
+						Double b = myStack2.pop(); 
+
+						if (myStack.getFirst().equals("+")){
+							myStack2.push(calculator.add(a,b));
+
+						}
+
+						else if (myStack.getFirst().equals("-")){
+							myStack2.push(calculator.subtraction(a,b));
+						}
+					}
 				}
 			}
 

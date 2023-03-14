@@ -28,7 +28,7 @@ public class Numeros {
 	 * @param float a and b
 	 * @return the result of the addition
 	 */
-	public float add(float a, float b) {
+	public Double add(Double a, Double b) {
 		return a+b;
 	}
 	
@@ -36,7 +36,7 @@ public class Numeros {
 	 * @param float a and b
 	 * @return the result of the subtraction
 	 */
-	public float subtraction(float a, float b) {
+	public Double subtraction(Double a, Double b) {
 		return a-b;
 	}
 	
