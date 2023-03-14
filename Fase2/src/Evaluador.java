@@ -3,47 +3,29 @@ import java.util.Stack;
 public class Evaluador {
 
     public Double operador(String[] valores){
-        for (int i=0; i<valores.length; i++) {
+        int cuenta = 0;
+        for (int i=0; i<3; i++) {
             switch (valores[i]) {
                 case "(": 
-                    Stack<Double> stack = new Stack<Double>();
+                cuenta = cuenta +1;
+                
+                case ")":
+                cuenta = cuenta -1;
 
+                default:
+                System.out.println(valores[i]);
 
-                    break;
+                
             }
+            
 
     }
 
     return null;
 
-       Double a = mystack.pop();
-       Double b = mystack.pop();
-
-       return a;
-
-
-
-
-
+       //Double a = mystack.pop();
+       //Double b = mystack.pop();
 
     }
 
-    public Stack<Double> stackeador(String[] valores){
-
-        for (int i=0; i<valores.length; i++) {
-                switch (valores[i]) {
-                    case "(": 
-                        Stack<Double> stack = new Stack<Double>();
-
-
-                        break;
-                }
-
-        }
-
-        return null;
-    }
-	
-	
-	
 }
