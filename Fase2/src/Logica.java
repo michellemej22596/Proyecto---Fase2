@@ -50,22 +50,22 @@ public class Logica {
 
                 case "3":
 
-                if(Funciones.funcionesLisp.containsKey(lista.get(2)) &&
-                        Funciones.funcionesLisp.containsKey(lista.get(3))) {
-                    if(Funciones.funcionesLisp.get(lista.get(2)).equals(Funciones.funcionesLisp.get(lista.get(3)))) {
+                if(Funciones.variablesDelPrograma.containsKey(lista.get(2)) &&
+                        Funciones.variablesDelPrograma.containsKey(lista.get(3))) {
+                    if(Funciones.variablesDelPrograma.get(lista.get(2)).equals(Funciones.funcionesLisp.get(lista.get(3)))) {
                         return true;
                     } else {
                         return false;
                     }
-                } else if (Funciones.funcionesLisp.containsKey((lista.get(2)))) {
+                } else if (Funciones.variablesDelPrograma.containsKey((lista.get(2)))) {
                     String comparison = "\"" + Funciones.funcionesLisp.get(lista.get(2)).get(1) +"\"";
-                    if(Funciones.funcionesLisp.get(lista.get(2)).get(1).equals(lista.get(3)) || comparison.equals(lista.get(3))) {
+                    if(Funciones.variablesDelPrograma.get(lista.get(2)).get(1).equals(lista.get(3)) || comparison.equals(lista.get(3))) {
                         return true;
                     } else {
                         return false;
                     }
-                } else if  (Funciones.funcionesLisp.containsKey((lista.get(3)))) {
-                    if(Funciones.funcionesLisp.get(lista.get(3)).equals(lista.get(2))) {
+                } else if  (Funciones.variablesDelPrograma.containsKey((lista.get(3)))) {
+                    if(Funciones.variablesDelPrograma.get(lista.get(3)).equals(lista.get(2))) {
                         return true;
                     } else {
                         return false;
