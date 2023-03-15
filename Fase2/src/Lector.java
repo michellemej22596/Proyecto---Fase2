@@ -24,6 +24,31 @@ public class Lector implements  IStack{
                         siguiente = linea.charAt(i+1);
                     }
 
+                    else if (i == linea.length() - 1){
+                        siguiente = ' ';
+
+                    }
+
+                    if(actual == ';') {
+                        comentario = 1;
+                    }
+
+                    if (comentario ==0){
+                        switch (actual){
+
+                            case '(': case '<': case ' ': case '>': case '+': case '-': case '*': case ')': case '"':
+                            case '/':
+                            if(actual == '(') {
+                                inicio ++;
+                            } else if(actual == ')') {
+                                fin ++;
+                           
+
+
+                        }
+
+                    }
+
                 }
 
             }
