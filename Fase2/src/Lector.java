@@ -16,10 +16,15 @@ public class Lector implements  IStack{
         
 
             while((linea=reader.readLine()) != null){
+                int comentario = 0 ;
+                for(int i = 0; i < linea.length(); i ++) {
+                    char actual = linea.charAt(i);
+                    char siguiente = ' ';
+                    if(i < linea.length() - 1){
+                        siguiente = linea.charAt(i+1);
+                    }
 
-                //linea = reader.readLine(); 
-                System.out.println("a");
-                System.out.println(linea);
+                }
 
             }
 
