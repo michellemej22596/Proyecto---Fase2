@@ -52,7 +52,6 @@ public class Funciones {
             } else {
                 SETQ.set(2,simbolo);
                 cuerpoFuncion.add(simbolo);
-                System.out.println("Se ha encontrado la palabra reservada SETQ");
                 setq(SETQ);
             }
         }
@@ -63,9 +62,6 @@ public class Funciones {
         }
         
         funcionesLisp.put(tipoDeFuncion,cuerpoFuncion);
-        System.out.println(funcionesLisp);
-        System.out.println(funcionesLisp.get(""));
-        System.out.println(cuerpoFuncion);
         return "Función: " + tipoDeFuncion;
     }
 
@@ -81,7 +77,6 @@ public class Funciones {
         Interpretador interpretador = new Interpretador();
         ArrayList<ArrayList<String>> codigoAInterpretar = new ArrayList<>();
         ArrayList<String> linea = funcionesLisp.get(lineaEscaneada.get(0));
-        System.out.println("Primera línea: " + linea);
         String k = "3";
         try {
             k = lineaEscaneada.get(1);
@@ -97,7 +92,6 @@ public class Funciones {
                 break;
             } else {
                 l ++;
-                System.out.println("Se han encontrado variables. ");
                 String nombreVariable = linea.get(i);
                 String valor = lineaEscaneada.remove(0);
                 Collections.replaceAll(linea,nombreVariable,valor);
@@ -123,7 +117,6 @@ public class Funciones {
 
         System.out.println(nombreFuncion + resultadoadoF.size());
         if(Recursividad(resultadoadoF,nombreFuncion)) {
-            System.out.println("IN RECURSIVE");
             long resultado = 1;
             for(int i = Integer.parseInt(k); i > 0; i --) {
                 resultado *= i;
@@ -140,7 +133,6 @@ public class Funciones {
         for(int i = 0; i<partes.length; i++) {
         	partes[i] = partes[i].replace(" ","");
             if(partes[i].equals(nombre)) {
-                System.out.println(partes[i]);
                 return true;
             }
         }
@@ -161,11 +153,9 @@ public class Funciones {
                 }
                 ArrayList<String> listValues = estructura.list(linea);
                 variablesDelPrograma.put(nombreVariable,listValues);
-                System.out.println("Se ha encontrado un predicado list");
                 return " " + nombreVariable + " == " + listValues;
             } else if (linea.get(4).equals("+") || linea.get(4).equals("-") || linea.get(4).equals("*")
                     || linea.get(4).equals("/")) {
-                System.out.println("aritmetica");
                 tipoVariable = "aritmetica";
 
                 linea.remove(linea.size() - 1);

@@ -73,7 +73,6 @@ public class Aritmetica {
                 break;
 
             case "*":
-                System.out.println("IN MULT");
                 result = 1;
                 for(int i = open + 2; i < closed - 1; i ++) {
                     double number;

@@ -16,13 +16,12 @@ public class Main {
 
         ArrayList<String> results = interprete.calcular(stack);
 
-        System.out.println("Presione enter para mostrar cada resultado en una linea");
+        System.out.println("Presione enter");
         sc.nextLine();
         for(int i = 0; i < results.size(); i++) {
             System.out.println(results.get(i));
         }
 
-        // One the program is finished
         System.out.println("Presione enter para salir");
         sc.nextLine();
     }

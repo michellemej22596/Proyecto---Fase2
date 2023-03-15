@@ -45,7 +45,6 @@ public class Estructura {
         }
         System.out.println(fCond);
         boolean resultadoBinario = resultadoCond(fCond);
-        System.out.println(linea);
         System.out.println(linea2);
 
         if(resultadoBinario) {
@@ -161,7 +160,6 @@ public class Estructura {
     }
 
     public ArrayList<String> list(ArrayList<String> linea) {
-        System.out.println("list");
         ArrayList<String> resultadoList = new ArrayList<>();
         linea.remove(0); 
         linea.remove(0); 

@@ -47,7 +47,6 @@ public class Lector implements  IStack{
                             }
                             if(actual == '<' || actual == '>' || actual == '=') {
                                 if(siguiente == '=') {
-                                    System.out.println("INNN");
                                     substring += actual;
                                     break;
                                 }
