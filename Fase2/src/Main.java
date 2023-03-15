@@ -10,8 +10,22 @@ public class Main {
         
         Scanner sc = new Scanner(System.in);
         Lector lector = new Lector();
-        lector.getStack("C:\\Users\\pablo\\Desktop\\Estructura de datos\\Git\\mi proyecto2\\main\\Fase2\\src\\lisp.txt");
+        ArrayList<ArrayList<String>> stack =  lector.getStack("D:\\Escritorio\\Proyecto---Fase2\\Fase2\\src\\lisp.txt");
         
-        
+        Interpretador interprete = new Interpretador();
+
+        ArrayList<String> results = interprete.calcular(stack);
+
+        System.out.println("Presione enter para mostrar cada resultado en una linea");
+        sc.nextLine();
+        for(int i = 0; i < results.size(); i++) {
+            System.out.println(results.get(i));
+        }
+
+        // One the program is finished
+        System.out.println("Presione enter para salir");
+        sc.nextLine();
     }
-}
+        
+
+    }

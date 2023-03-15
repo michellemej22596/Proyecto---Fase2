@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Aritmetica {
 
-    public double calculateArithmetic(ArrayList<String> line) {
+    public double calculadoraAritmetica(ArrayList<String> line) {
         
         Funciones variables = new Funciones();
         double result = 1;
@@ -100,7 +100,7 @@ public class Aritmetica {
                 break;
         }
 
-        
+
         for(int i = closed - 1; i > open; i --) {
             try {
                 line.remove(i);

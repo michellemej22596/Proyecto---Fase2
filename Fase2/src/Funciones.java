@@ -173,7 +173,7 @@ public class Funciones {
                     linea.remove(0);
                 }
                 Aritmetica aritmetica = new Aritmetica();
-                resultado = aritmetica.calcular(linea);
+                resultado = aritmetica.calculadoraAritmetica(linea);
                 valorVariable = String.valueOf(resultado);
             } else {
                 ArrayList<String> funcionEjecutar = new ArrayList<>();
