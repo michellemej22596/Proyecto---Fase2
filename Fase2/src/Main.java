@@ -8,6 +8,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         Lector lector = new Lector();
+        lector.getStack("lisp.txt");
         
         
     }
