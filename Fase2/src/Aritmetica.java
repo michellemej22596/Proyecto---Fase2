@@ -100,6 +100,7 @@ public class Aritmetica {
                 break;
         }
 
+        
         for(int i = closed - 1; i > open; i --) {
             try {
                 line.remove(i);
