@@ -14,37 +14,37 @@ public class Lector implements  IStack{
         int fin = 0;
         String substring = "";
         ArrayList<String> arr = new ArrayList<>();
-        
-
-            while((linea=reader.readLine()) != null){
-                int comentario = 0 ;
-                for(int i = 0; i < linea.length(); i ++) {
-                    char actual = linea.charAt(i);
-                    char siguiente = ' ';
-                    if(i < linea.length() - 1){
-                        siguiente = linea.charAt(i+1);
+        //Vamos a tomar cada linea y una por una vamos a pre-procesarlas para insertarlas en un arraylist.
+            while((linea=reader.readLine()) != null){//Vamos a detenernos cuando se acaben las lineas
+                int comentario = 0 ;//Nos dice si la linea es codigo o comentario
+                for(int i = 0; i < linea.length(); i ++) {//Teniendo la linea vamos a recorrerla.
+                    char actual = linea.charAt(i);//Espacio por el que estamos
+                    char siguiente = ' ';//Siguiente espacio
+                    if(i < linea.length() - 1){//Significa que se va  a cumplir si no estamos en el final
+                        siguiente = linea.charAt(i+1);//Si sucede entonces vamos a almacenar el siguiente caracter
                     }
 
-                    else if (i == linea.length() - 1){
-                        siguiente = ' ';
+                    else if (i == linea.length() - 1){//Si estamos en el final
+                        siguiente = ' ';//llenamos con un espacio en blanco
 
                     }
 
-                    if(actual == ';') {
+                    if(actual == ';') {//Nos dice si la linea es comentario
                         comentario = 1;
                     }
 
-                    if (comentario ==0){
+                    if (comentario ==0){// Si no es comentario entonces procedemos a pre-procesar.
                         switch (actual){
 
                             case '(': case '<': case ' ': case '>': case '+': case '-': case '*': case ')': case '"':
-                            case '/':
-                            if(actual == '(') {
-                                inicio ++;
+                            case '/'://Validamos si los caracteres son de tipo aritmetico o de agrupación
+                            if(actual == '(') {//si encontramos un parentesis sabemos que sige una instrucción
+                                inicio ++;//Contamos el parentesis
                             } 
                             else if(actual == ')') {
-                                fin ++;
+                                fin ++;//Hacemos lo mismo que la instrucción anterior pero ahora contamos la cerradura de parentesis
                             }
+                            //Separamos por el tipo de caracteries
                             if(actual == '<' || actual == '>' || actual == '=') {
                                 if(siguiente == '=') {
                                     substring += actual;
@@ -91,7 +91,7 @@ public class Lector implements  IStack{
                             }
                             break;
 
-                            default:    // Gets any character that doesn't define an operation
+                            default:    // devuelve cualquier cosa que no sea una palabra reservada o un simbolo especial
                             substring += actual;
                             if(i == linea.length() - 1) {
                                 arr.add(substring);
@@ -99,7 +99,7 @@ public class Lector implements  IStack{
                             break;
                     }
 
-                    if(inicio == fin && arr.size() > 0) {
+                    if(inicio == fin && arr.size() > 0) {// Cuando llegamos al final devolvemos la linea pre-procesada, esto sucede cuando tengamos la misma cantidad de parentesis abiertos y cerrados
                         ArrayList<String> arr2 = new ArrayList<>(arr);
                         stack.add(arr2);
                         arr.clear();
