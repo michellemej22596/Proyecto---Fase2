@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+// clase aritmetica que se encarga de realizar las operaciones aritmeticas como suma, resta, multiplicacion y division
 public class Aritmetica {
 
     public double calculadoraAritmetica(ArrayList<String> line) {
@@ -45,6 +45,7 @@ public class Aritmetica {
         double result = 0;
         String operator = line.get(open + 1);
         switch (operator) {
+            //suma
             case "+":
 
                 for(int i = open + 2; i < closed - 1; i ++) {
@@ -57,7 +58,7 @@ public class Aritmetica {
                     result += number;
                 }
                 break;
-
+                //resta
             case "-":
 
                 result = Double.parseDouble(line.get(open + 2));
@@ -71,7 +72,7 @@ public class Aritmetica {
                     result -= number;
                 }
                 break;
-
+                //multiplicacion
             case "*":
                 result = 1;
                 for(int i = open + 2; i < closed - 1; i ++) {
@@ -84,7 +85,7 @@ public class Aritmetica {
                     result *= number;
                 }
                 break;
-
+                //division
             case "/":
                 result = Double.parseDouble(line.get(open + 2));
                 for(int i = open + 3; i < closed - 1; i ++) {

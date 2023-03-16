@@ -1,11 +1,14 @@
 import java.util.ArrayList;
 
 public class Estructura {
+	//Opera funciones propias de lisp
 	
     public String operar(ArrayList<String> linea) {
     	
+    	
         String resultado = "";
         String operador = linea.get(1);
+        //Switch segun el operador que se encuentre en la segunda posición de la linea
         switch (operador) {
         
             case "LIST":
@@ -28,6 +31,7 @@ public class Estructura {
         return resultado;
     }
     
+    //Condicional
     private ArrayList<String> cond(ArrayList<String> linea) {
         ArrayList<String> resultado = new ArrayList<>();
 
@@ -95,13 +99,14 @@ public class Estructura {
         return resultado;
     }
     
+    //Llamamos a la clase logica para resolver y devolver tipo booleanos
     private boolean resultadoCond(ArrayList<String> fCond) {
         Logica logica = new Logica();
         boolean respuesta = logica.calculadoraLogica(fCond);
         return respuesta;
     }
 
-
+//Permite que no se operen los caracteres
     private String quote(ArrayList<String> linea) {
         String resultado = "";
         linea.remove(0); 
@@ -114,6 +119,7 @@ public class Estructura {
         return resultado;
     }
 
+    //Acceso a los distintos indices de la lista
     private String acceder(ArrayList<String> linea) {
         String elemento = "";
         String nombreVariable = linea.get(2);
@@ -159,6 +165,7 @@ public class Estructura {
         return elemento;
     }
 
+    //Opera una lista de lisp
     public ArrayList<String> list(ArrayList<String> linea) {
         ArrayList<String> resultadoList = new ArrayList<>();
         linea.remove(0); 

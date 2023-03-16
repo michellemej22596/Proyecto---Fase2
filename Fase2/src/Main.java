@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
+// clase main que se encarga de leer el archivo y ejecutar el interprete
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         System.out.println("HOLA ESTE ES UN INTERPRETE DE LISP!");

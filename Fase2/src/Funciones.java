@@ -11,10 +11,12 @@ import java.util.Collections;
 
 public class Funciones {
 	
+	//Declaramos HashMaps donde guardaremos nuestras funciones de lisp y variables.
     public static LinkedHashMap<String, ArrayList<String>> funcionesLisp = new LinkedHashMap<>();
 
     public static LinkedHashMap<String, ArrayList<String>> variablesDelPrograma = new LinkedHashMap<>();
    
+    //Constructor
     public Funciones() {
         ArrayList<String> funcionesAritmeticas = new ArrayList<>();
         funcionesAritmeticas.add("aritmetica");
@@ -30,6 +32,7 @@ public class Funciones {
         
     }
     
+    //Analizamos el tipo de funcion
     public String defun(ArrayList<String> lineaEscaneada) {
         ArrayList<String> SETQ = new ArrayList<>();
         
@@ -65,6 +68,7 @@ public class Funciones {
         return "Función: " + tipoDeFuncion;
     }
 
+    //Calculo de resultados
     public static String ejecutarFunciones(ArrayList<String> lineaEscaneada) {
         System.out.println(lineaEscaneada);
         ArrayList<String> FuncionSETQ = new ArrayList<>();
@@ -128,6 +132,7 @@ public class Funciones {
         return  resultadoadoF + "";
     }
 
+    //Evalua si se aplica recursividad a la funcion
     private static boolean Recursividad(ArrayList<String> linea, String nombre) {
         String[] partes = linea.get(0).split(",");
         for(int i = 0; i<partes.length; i++) {
@@ -139,6 +144,7 @@ public class Funciones {
         return false;
     }
 
+    //logica para setq
     public String setq(ArrayList<String> linea) {
         String valorVariable = "";
         String nombreVariable = linea.get(2);
@@ -192,6 +198,7 @@ public class Funciones {
         return " " + nombreVariable + " == " + valorVariable;
     }
  
+    //Busca los valores numericos de la variable del programa por medio del HashMap
     public double getVariable(String variable) {
         try {
             return Double.parseDouble(variablesDelPrograma.get(variable).get(1));
@@ -201,6 +208,7 @@ public class Funciones {
         }
     }
     
+    //Define si se operara funciones aritmeticas
     public boolean operar(String key) {
         if(funcionesLisp.containsKey(key) && funcionesLisp.get(key) != null && funcionesLisp.get(key).get(0).equals("aritmetica")) {
             return true;

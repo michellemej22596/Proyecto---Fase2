@@ -11,7 +11,7 @@ import javax.xml.namespace.QName;
 
 
 public class Logica {
-    
+    // clase logica donde se evaluan las condiciones de LISP
     public boolean calculadoraLogica(ArrayList<String> lista) {
         boolean resultado = false;
         

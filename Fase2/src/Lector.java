@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class Lector implements  IStack{
 // Para hacer la lectura del txt nos guíamos de la siguiente fuente: https://www.geeksforgeeks.org/different-ways-reading-text-file-java/
     public ArrayList<ArrayList<String>> getStack(String document) {
-        System.out.println("a");
         ArrayList<ArrayList<String>> stack = new ArrayList<>();
         try {
         BufferedReader reader = new BufferedReader(new FileReader(document));

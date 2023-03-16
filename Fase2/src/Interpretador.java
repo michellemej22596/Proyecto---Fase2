@@ -50,7 +50,7 @@ public class Interpretador implements Interpretador_i{
 
     }
 
-        System.out.println("The results of the program are:");
+        System.out.println("Resultado: ");
         System.out.println(results);
         return results;
     }

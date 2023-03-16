@@ -1,4 +1,18 @@
+
+(+ 5 23)
+
 ( defun factorial ( n )
-  ( if ( < = n 1 )
+  ( if ( <= n 1 )
       1
-      ( * n ( factorial ( - n 1 ) ) ) ) )
+      ( * n ( factorial ( - n 1) ) ) ) )
+      
+( defun square ( x )
+  ( * x x ) )
+  (square 5 )
+  
+  ( * 8 7 )
+
+(EQUALS 5 3 )
+
+
+
